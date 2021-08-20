@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import styles from "./App.module.css";
+import Cart from "./components/Cart/Cart";
+import ProductList from "./components/ProductList/productList";
+import Sidebar from "./components/SideBar/sidebar";
+import CartProvider, { useCart, useCartAction } from "./provider/cartProvider";
+import ProductProvider from "./provider/productProvider";
 
 function App() {
+  const [isShow, setIsShow] = useState(false);
+  const cart = useCart();
+  const cartDispatcher = useCartAction();
+  const showModalHandler = () => {
+    
+    setIsShow(true);
+  };
+  const closeModalHandler = () => {
+    setIsShow(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <div className={styles.layoutContainer}>
+        <ProductProvider>
+          <Sidebar onShow={showModalHandler} />
+          {isShow && (
+            <Cart onShow={showModalHandler} onClose={closeModalHandler} />
+          )}
+
+          <ProductList />
+        </ProductProvider>
+      </div>
+    </CartProvider>
   );
 }
 

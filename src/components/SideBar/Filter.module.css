@@ -1,0 +1,30 @@
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: indianred; */
+}
+.filterContainer button {
+  display: block;
+}
+.filterContainer hr {
+  width: 220px;
+
+  border: 1px solid rgb(90 87 87);
+}
+.filterContainer button {
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 20px;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+  color: white;
+  background-color: #1e1d1e;
+}
+/* .shoppingCartBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+} */
