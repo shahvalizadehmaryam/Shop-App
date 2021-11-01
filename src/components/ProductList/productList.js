@@ -1,13 +1,19 @@
 import { useProduct } from "../../provider/productProvider";
-import Product from "../Product/product";
+import Product from "../ProductList/Product/product";
 import styles from "./productList.module.css";
+import { ToastProvider } from "react-toast-notifications";
 
 const ProductList = () => {
-  const products = useProduct();
+  const { products } = useProduct();
+
   return (
     <div className={styles.productsContainer}>
       {products.map((product) => {
-        return <Product key={product.id} product={product} />;
+        return (
+          <ToastProvider>
+            <Product key={product.id} product={product} />
+          </ToastProvider>
+        );
       })}
     </div>
   );

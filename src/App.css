@@ -1,0 +1,8 @@
+.layoutContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* .container {
+  position: relative !important;
+  top: 70px !important;
+} */

@@ -1,9 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
-import { productsData } from "../db/products";
 const cartData = {
   cart: [],
-  clickItem: 0,
-  //totalprice
   totalAmount: 0,
 };
 const CartContext = createContext();
@@ -11,19 +8,17 @@ const CartContextDispatcher = createContext();
 const Reducer = (state, action) => {
   switch (action.type) {
     case "ADD": {
-      const value = action.data;
+      const value = action.payload;
       const updatedTotalAmount =
         state.totalAmount + value.price * value.quantity;
-      const index = state.cart.findIndex((item) => item.id === action.data.id);
-      // const product = { ...action.data[index] };
-      if (index >= 0) {
+      const existedProduct = state.cart.find(
+        (item) => item.id === action.payload.id
+      );
+      if (existedProduct) {
         console.log("you added before");
-        const product = { ...state.cart[index] };
-        product.quantity = product.quantity + action.data.quantity;
-        const productList = [...state.cart];
-        productList[index] = product;
+        existedProduct.quantity = existedProduct.quantity + 1;
         return {
-          cart: productList,
+          cart: state.cart,
           totalAmount: updatedTotalAmount,
         };
       } else {
@@ -33,7 +28,6 @@ const Reducer = (state, action) => {
           totalAmount: updatedTotalAmount,
         };
       }
-      // if( === action.data)
     }
     case "increment": {
       const index = action.data.findIndex((item) => item.id === action.id);
@@ -51,8 +45,7 @@ const Reducer = (state, action) => {
     case "decrement": {
       const index = action.data.findIndex((item) => item.id === action.id);
       const updatedTotalAmount =
-        state.totalAmount -
-        action.data[index].price * 1;
+        state.totalAmount - action.data[index].price * 1;
       const product = { ...action.data[index] };
       if (product.quantity === 1) {
         const filteredProducts = action.data.filter((p) => p.id !== action.id);
@@ -70,30 +63,20 @@ const Reducer = (state, action) => {
         };
       }
     }
-    case "edit": {
-      const index = cartData.cart.findIndex((item) => item.id === action.id);
-      const product = { ...cartData.cart[index] };
-      product.title = action.event.target.value;
-      const productList = [...cartData];
-      productList.cart[index] = product;
-      return productList;
-    }
     case "COUNTITEM": {
       const x = [...cartData.cart];
       const y = [...cartData];
       const cartLength = x.filter((p) => p.quantity > 0).length;
       y.clickItem = cartLength;
       return y;
-
-      //   return cartData.clickItem;
-      //   console.log("cartLength", cartData.clickItem);
     }
     case "LIST": {
-      return cartData.data;
+      return cartData.cart;
     }
 
-    default:
+    default: {
       return cartData;
+    }
   }
 };
 

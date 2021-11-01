@@ -1,0 +1,21 @@
+.filterContainer {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.filterContainer button {
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 20px;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+  color: white;
+  background-color: #1e1d1e;
+}
+.categorySelect {
+  width: 12rem;
+}
