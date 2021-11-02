@@ -1,3 +1,4 @@
+import { ToastProvider } from "react-toast-notifications";
 import Header from "../components/Header/Header";
 import CartProvider from "../provider/cartProvider";
 import ProductProvider from "../provider/productProvider";
@@ -6,12 +7,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
-        <ProductProvider>
-          <CartProvider>
-            <Header className="header" />
-            {children}
-          </CartProvider>
-        </ProductProvider>
+        <ToastProvider>
+          <ProductProvider>
+            <CartProvider>
+              <Header className="header" />
+              {children}
+            </CartProvider>
+          </ProductProvider>
+        </ToastProvider>
       </div>
       {/* <Footer /> */}
     </>

@@ -22,7 +22,6 @@ const Reducer = (state, action) => {
           totalAmount: updatedTotalAmount,
         };
       } else {
-        // value.quantity = value.quantity + 1;
         const updatedItems = state.cart.concat(value);
         return {
           cart: updatedItems,
@@ -32,12 +31,12 @@ const Reducer = (state, action) => {
     }
     case "increment": {
       const existedProduct = state.cart.find((item) => item.id === action.id);
-      const updatedTotalAmount = state.totalAmount + existedProduct.price * 1;
-      existedProduct.quantity++;
-      return {
-        cart: state.cart,
-        totalAmount: updatedTotalAmount,
-      };
+        const updatedTotalAmount = state.totalAmount + existedProduct.price * 1;
+        existedProduct.quantity++;
+        return {
+          cart: state.cart,
+          totalAmount: updatedTotalAmount,
+        };
     }
     case "decrement": {
       const existedProduct = state.cart.find((item) => item.id === action.id);

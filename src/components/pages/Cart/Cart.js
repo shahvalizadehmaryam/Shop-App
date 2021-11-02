@@ -1,8 +1,10 @@
 import { useCart, useCartAction } from "../../../provider/cartProvider";
 import styles from "./Cart.module.css";
 import CartItem from "./CartItem";
+import { useToasts } from "react-toast-notifications";
 
 const Cart = (props) => {
+  const { addToast } = useToasts();
   const cartData = useCart();
   const cartDispatcher = useCartAction();
   console.log("cartData", cartData);
@@ -11,20 +13,20 @@ const Cart = (props) => {
     <CartItem
       key={item.id}
       item={item}
-      onIncrement={() =>
-        cartDispatcher({
-          type: "increment",
-          id: item.id,
-          // data: cartData.cart,
-          // totalAmount: cartData.totalAmount,
-        })
-      }
+      onIncrement={() => {
+        if (item.quantity < item.warhouse) {
+          cartDispatcher({
+            type: "increment",
+            id: item.id,
+          });
+        } else {
+          addToast("Sorry , Check out inventory", { appearance: "error" });
+        }
+      }}
       onDecrement={() =>
         cartDispatcher({
           type: "decrement",
           id: item.id,
-          data: cartData.cart,
-          totalAmount: cartData.totalAmount,
         })
       }
     />
