@@ -9,8 +9,13 @@ const Reducer = (state, action) => {
   switch (action.type) {
     case "ADD": {
       const value = action.payload;
+      const productItem = {
+        ...value,
+        quantity: 1,
+      };
+
       const updatedTotalAmount =
-        state.totalAmount + value.price * value.quantity;
+        state.totalAmount + productItem.price * productItem.quantity;
       const existedProduct = state.cart.find(
         (item) => item.id === action.payload.id
       );
@@ -22,7 +27,7 @@ const Reducer = (state, action) => {
           totalAmount: updatedTotalAmount,
         };
       } else {
-        const updatedItems = state.cart.concat(value);
+        const updatedItems = state.cart.concat(productItem);
         return {
           cart: updatedItems,
           totalAmount: updatedTotalAmount,
@@ -31,12 +36,12 @@ const Reducer = (state, action) => {
     }
     case "increment": {
       const existedProduct = state.cart.find((item) => item.id === action.id);
-        const updatedTotalAmount = state.totalAmount + existedProduct.price * 1;
-        existedProduct.quantity++;
-        return {
-          cart: state.cart,
-          totalAmount: updatedTotalAmount,
-        };
+      const updatedTotalAmount = state.totalAmount + existedProduct.price * 1;
+      existedProduct.quantity++;
+      return {
+        cart: state.cart,
+        totalAmount: updatedTotalAmount,
+      };
     }
     case "decrement": {
       const existedProduct = state.cart.find((item) => item.id === action.id);
@@ -55,17 +60,6 @@ const Reducer = (state, action) => {
         };
       }
     }
-    case "COUNTITEM": {
-      const x = [...cartData.cart];
-      const y = [...cartData];
-      const cartLength = x.filter((p) => p.quantity > 0).length;
-      y.clickItem = cartLength;
-      return y;
-    }
-    case "LIST": {
-      return cartData.cart;
-    }
-
     default: {
       return cartData;
     }

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
-        <ToastProvider>
+        <ToastProvider autoDismiss={true}>
           <ProductProvider>
             <CartProvider>
               <Header className="header" />
