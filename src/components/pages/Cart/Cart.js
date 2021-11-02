@@ -15,8 +15,8 @@ const Cart = (props) => {
         cartDispatcher({
           type: "increment",
           id: item.id,
-          data: cartData.cart,
-          totalAmount: cartData.totalAmount,
+          // data: cartData.cart,
+          // totalAmount: cartData.totalAmount,
         })
       }
       onDecrement={() =>

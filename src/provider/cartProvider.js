@@ -22,6 +22,7 @@ const Reducer = (state, action) => {
           totalAmount: updatedTotalAmount,
         };
       } else {
+        // value.quantity = value.quantity + 1;
         const updatedItems = state.cart.concat(value);
         return {
           cart: updatedItems,
@@ -30,35 +31,27 @@ const Reducer = (state, action) => {
       }
     }
     case "increment": {
-      const index = action.data.findIndex((item) => item.id === action.id);
-      const updatedTotalAmount =
-        action.totalAmount + action.data[index].price * 1;
-      const product = { ...action.data[index] };
-      product.quantity++;
-      const productList = [...action.data];
-      productList[index] = product;
+      const existedProduct = state.cart.find((item) => item.id === action.id);
+      const updatedTotalAmount = state.totalAmount + existedProduct.price * 1;
+      existedProduct.quantity++;
       return {
-        cart: productList,
+        cart: state.cart,
         totalAmount: updatedTotalAmount,
       };
     }
     case "decrement": {
-      const index = action.data.findIndex((item) => item.id === action.id);
-      const updatedTotalAmount =
-        state.totalAmount - action.data[index].price * 1;
-      const product = { ...action.data[index] };
-      if (product.quantity === 1) {
-        const filteredProducts = action.data.filter((p) => p.id !== action.id);
+      const existedProduct = state.cart.find((item) => item.id === action.id);
+      const updatedTotalAmount = state.totalAmount - existedProduct.price * 1;
+      if (existedProduct.quantity === 1) {
+        const filteredProducts = state.cart.filter((p) => p.id !== action.id);
         return {
           cart: filteredProducts,
           totalAmount: updatedTotalAmount,
         };
       } else {
-        const productList = [...action.data];
-        product.quantity--;
-        productList[index] = product;
+        existedProduct.quantity--;
         return {
-          cart: productList,
+          cart: state.cart,
           totalAmount: updatedTotalAmount,
         };
       }

@@ -5,17 +5,23 @@ import {
   useProduct,
   useProductAction,
 } from "../../../provider/productProvider";
+import { useEffect } from "react/cjs/react.development";
 const Product = ({ product }) => {
   const { addToast } = useToasts();
   const cartData = useCart();
   const cartDispatcher = useCartAction();
   const dispatcher = useProductAction();
   const addToCartHandler = () => {
-    cartDispatcher({ type: "ADD", payload: product });
-    addToast("Added to cart successfully!", {
-      appearance: "success",
-      autoDismiss: true,
-    });
+    if (product.quantity >= product.warhouse) {
+      addToast("Sorry , Check out inventory", { appearance: "error" });
+    } else {
+      cartDispatcher({ type: "ADD", payload: product });
+
+      addToast("Added to cart successfully!", {
+        appearance: "success",
+        autoDismiss: true,
+      });
+    }
   };
   return (
     <div className={style.product}>

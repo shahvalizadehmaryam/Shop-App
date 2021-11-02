@@ -14,6 +14,7 @@ const Header = (props) => {
   return (
     <div className={styles.headerContainer}>
       <h2 className={styles.headerTitle}>Shopping App</h2>
+      {/* <Filter /> */}
       <div className={styles.cartPart}>
         <NavLink to="/" className={styles.navlink}>
           <FaHome />
