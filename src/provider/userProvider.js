@@ -1,18 +1,23 @@
-import { useContext } from "react";
+import { useContext, useReducer } from "react";
 import { createContext } from "react/cjs/react.development";
 
 const UserContext = createContext();
 const UserContextDispatcher = createContext();
 const Reducer = (state, action) => {
   switch (action.type) {
+    case "GETUSERINFORMATION": {
+      return {
+        userData: action.payload,
+      };
+    }
   }
   return state;
 };
 
 const initialState = {
-  userList: [],
+  userData: {},
 };
-const UserProvider = () => {
+const UserProvider = ({ children }) => {
   const [users, userDispatcher] = useReducer(Reducer, initialState);
   return (
     <>
