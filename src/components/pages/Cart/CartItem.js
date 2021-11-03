@@ -4,7 +4,7 @@ import styles from "./CartItem.module.css";
 import { BiTrash } from "react-icons/bi";
 
 
-const CartItem = ({ item, onChange, onIncrement, onDecrement }) => {
+const CartItem = ({ item, onIncrement, onDecrement }) => {
   return (
     <div className={styles.cartItemContainer}>
       <div className={styles.cartImagePart}>

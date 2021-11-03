@@ -7,6 +7,7 @@ import { useCart, useCartAction } from "../../provider/cartProvider";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
+import User from "../User/user";
 
 const Header = (props) => {
   const cartData = useCart();
@@ -16,7 +17,7 @@ const Header = (props) => {
     <div className={styles.headerContainer}>
       <h2 className={styles.headerTitle}>Shopping App</h2>
       {/* <Filter /> */}
-
+      <User />
       <div className={styles.cartPart}>
         <NavLink to="/" className={styles.navlink}>
           <FaHome />
