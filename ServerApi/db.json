@@ -1,128 +1,168 @@
 {
- 
-  "products":[
-    
-      {
+  "products": [
+    {
       "id": 1,
-        "path": "w1.jpg",
-        "title": "Collection Overcoat - Black - Maxi",
-        "warhouse": 2,
-        "description": "Sphynx Tie Dye Grey",
-        "availableSizes": ["X", "L", "XL", "XXL"],
-        "price": 56.99,
-        "type": "women collection"
-      },
-    
-      {
-        "id": 2,
-        "path": "w2.jpg",
-        "title": "Modest Modest Overcoat - Brown",
-        "warhouse": 3,
-        "description": "Danger Knife Grey",
-        "availableSizes": ["X", "M", "L"],
-        "price": 39.99,
-        "type": "women collection"
-      },
-    
-      {
-        "id": 3,
-        "path": "women3.jpg",
-        "title": "White DGK Script Tee",
-        "warhouse": 2,
-        "description": "White DGK Script",
-        "availableSizes": ["X", "M", "L"],
-        "price": 14.9,
-        "type": "women collection"
-      },
-      {
-        "id": 4,
-        "path": "me1.jpg",
-        "title": "Collection Shirt - Khaki - Regular",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 35.99,
-        "type": "men collection"
-      },
-      {
-        "id": 5,
-        "path": "me2.jpg",
-        "title": "Collection Jacket - Beige - Fitted",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 11.99,
-        "type": "men collection"
-      },
-      {
-        "id": 6,
-        "path": "m3.jpg",
-        "title": "Born On The Streets  T-Shirt",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 25.9,
-        "type": "men collection"
-      },
-      {
-        "id": 7,
-        "path": "k1.jpg",
-        "title": "Koton Sweatshirt - Pink",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 7.99,
-        "type": "children collection"
-      },
-      {
-        "id": 8,
-        "path": "ch3.jpg",
-        "title": "Koton Sweatshirt - Purple - Basic",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 22.99,
-        "type": "children collection"
-      },
-      {
-        "id": 9,
-        "path": "me5.jpg",
-        "title": "Koton Coat - Brown",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 45.99,
-        "type": "men collection"
-      },
-      {
-        "id": 10,
-        "path": "ch2.jpg",
-        "title": "Born On The Streets  T-Shirt",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 25.9,
-        "type": "children collection"
-      },
-      {
-        "id": 11,
-        "path": "me4.jpg",
-        "title": "DYNAMO Coat - Black",
-        "warhouse": 15,
-        "description": "Born On The Streets",
-        "availableSizes": ["XL"],
-        "price": 51.00,
-        "type": "men collection"
-      },
-      {
-        "id": 12,
-        "path": "w3.jpg",
-        "title": "Collection Jacket - Black - Blazer",
-        "warhouse": 15,
-        "description": "White DGK Script",
-        "availableSizes": ["X", "M", "L"],
-        "price": 47.99,
-        "type": "women collection"
-      }
+      "path": "w1.jpg",
+      "title": "Collection Overcoat - Black - Maxi",
+      "warhouse": 2,
+      "description": "Sphynx Tie Dye Grey",
+      "availableSizes": [
+        "X",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "price": 56.99,
+      "type": "women collection"
+    },
+    {
+      "id": 2,
+      "path": "w2.jpg",
+      "title": "Modest Modest Overcoat - Brown",
+      "warhouse": 3,
+      "description": "Danger Knife Grey",
+      "availableSizes": [
+        "X",
+        "M",
+        "L"
+      ],
+      "price": 39.99,
+      "type": "women collection"
+    },
+    {
+      "id": 3,
+      "path": "women3.jpg",
+      "title": "White DGK Script Tee",
+      "warhouse": 2,
+      "description": "White DGK Script",
+      "availableSizes": [
+        "X",
+        "M",
+        "L"
+      ],
+      "price": 14.9,
+      "type": "women collection"
+    },
+    {
+      "id": 4,
+      "path": "me1.jpg",
+      "title": "Collection Shirt - Khaki - Regular",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 35.99,
+      "type": "men collection"
+    },
+    {
+      "id": 5,
+      "path": "me2.jpg",
+      "title": "Collection Jacket - Beige - Fitted",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 11.99,
+      "type": "men collection"
+    },
+    {
+      "id": 6,
+      "path": "m3.jpg",
+      "title": "Born On The Streets  T-Shirt",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 25.9,
+      "type": "men collection"
+    },
+    {
+      "id": 7,
+      "path": "k1.jpg",
+      "title": "Koton Sweatshirt - Pink",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 7.99,
+      "type": "children collection"
+    },
+    {
+      "id": 8,
+      "path": "ch3.jpg",
+      "title": "Koton Sweatshirt - Purple - Basic",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 22.99,
+      "type": "children collection"
+    },
+    {
+      "id": 9,
+      "path": "me5.jpg",
+      "title": "Koton Coat - Brown",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 45.99,
+      "type": "men collection"
+    },
+    {
+      "id": 10,
+      "path": "ch2.jpg",
+      "title": "Born On The Streets  T-Shirt",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 25.9,
+      "type": "children collection"
+    },
+    {
+      "id": 11,
+      "path": "me4.jpg",
+      "title": "DYNAMO Coat - Black",
+      "warhouse": 15,
+      "description": "Born On The Streets",
+      "availableSizes": [
+        "XL"
+      ],
+      "price": 51,
+      "type": "men collection"
+    },
+    {
+      "id": 12,
+      "path": "w3.jpg",
+      "title": "Collection Jacket - Black - Blazer",
+      "warhouse": 15,
+      "description": "White DGK Script",
+      "availableSizes": [
+        "X",
+        "M",
+        "L"
+      ],
+      "price": 47.99,
+      "type": "women collection"
+    }
+  ],
+  "users": [
+    {
+      "name": "Maryam",
+      "lastName": "Shahvalizadeh",
+      "phoneNumber": "09147256934",
+      "email": "shahvalizadehmaryam@gmail.com",
+      "password": "maryam",
+      "confirmPassword": "maryam",
+      "id": 1
+    }
   ]
 }
