@@ -1,0 +1,14 @@
+.signIn {
+  width: 70%;
+  margin: 10px auto;
+}
+.signInTitle {
+  text-align: center;
+}
+.formPart {
+  width: 100%;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

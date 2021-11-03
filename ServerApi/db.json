@@ -156,13 +156,20 @@
   ],
   "users": [
     {
-      "name": "Maryam",
-      "lastName": "Shahvalizadeh",
+      "userName": "afra",
       "phoneNumber": "09147256934",
-      "email": "shahvalizadehmaryam@gmail.com",
-      "password": "maryam",
-      "confirmPassword": "maryam",
+      "email": "test@test.com",
+      "password": "afra",
+      "confirmPassword": "afra",
       "id": 1
+    },
+    {
+      "userName": "maryam",
+      "phoneNumber": "09147652459",
+      "email": "MaryamShahvalizadeh@gmail.com",
+      "password": "mm",
+      "confirmPassword": "mm",
+      "id": 2
     }
   ]
 }

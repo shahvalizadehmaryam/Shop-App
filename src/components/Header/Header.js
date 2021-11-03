@@ -6,6 +6,7 @@ import ShoppingCartIcon from "../../assets/shopping-cart.png";
 import { useCart, useCartAction } from "../../provider/cartProvider";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
+import { FaUserPlus } from "react-icons/fa";
 
 const Header = (props) => {
   const cartData = useCart();
@@ -15,9 +16,7 @@ const Header = (props) => {
     <div className={styles.headerContainer}>
       <h2 className={styles.headerTitle}>Shopping App</h2>
       {/* <Filter /> */}
-      <NavLink to="/signup" className={styles.navlink}>
-        Signup
-      </NavLink>
+
       <div className={styles.cartPart}>
         <NavLink to="/" className={styles.navlink}>
           <FaHome />
@@ -27,6 +26,9 @@ const Header = (props) => {
             <FaShoppingCart className={styles.cartIcon} />
             <span className={styles.iconButtonBadge}>{countItem}</span>
           </button>
+        </NavLink>
+        <NavLink to="/signup" className={styles.navlink}>
+          <FaUserPlus />
         </NavLink>
       </div>
     </div>

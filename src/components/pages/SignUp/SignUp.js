@@ -7,19 +7,19 @@ import { useState } from "react";
 import { useToasts } from "react-toast-notifications";
 import { Link } from "react-router-dom";
 const initialValues = {
-  name: "",
-  lastName: "",
+  userName: "",
   phoneNumber: "",
   email: "",
   password: "",
   confirmPassword: "",
 };
 
-const SignUp = () => {
+const SignUp = ({ history }) => {
   const { addToast } = useToasts();
   const onSubmit = async (values) => {
     const { data } = await axios.post("http://localhost:3001/users", values);
     if (data) {
+      history.push("/signin");
       addToast("you signedup successfully.", {
         appearance: "success",
         autoDismiss: true,
@@ -27,14 +27,10 @@ const SignUp = () => {
     }
   };
   const validationSchema = yup.object({
-    name: yup
+    userName: yup
       .string()
       .required("Name is Required!")
       .min(3, "Name must be 3 characters!"),
-    lastName: yup
-      .string()
-      .required("lastName is Required!")
-      .min(3, "lastName must be 3 characters!"),
     phoneNumber: yup
       .string()
       .required("phone Number is required")
@@ -61,8 +57,7 @@ const SignUp = () => {
     <div className={styles.signUp}>
       <h2 className={styles.signUpTitle}>Sign Up Form</h2>
       <form className={styles.formPart} onSubmit={formik.handleSubmit}>
-        <Input formik={formik} name="name" label="Name" />
-        <Input formik={formik} name="lastName" label="LastName" />
+        <Input formik={formik} name="userName" label="User Name" />
         <Input formik={formik} name="phoneNumber" label="Phone Number" />
         <Input formik={formik} name="email" label="Email" />
         <Input
@@ -81,9 +76,7 @@ const SignUp = () => {
           SignUp
         </button>
       </form>
-      <Link to="/signin">
-      go to signin
-      </Link>
+      <Link to="/signin">go to signin</Link>
     </div>
   );
 };

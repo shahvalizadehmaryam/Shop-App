@@ -9,22 +9,10 @@
   align-items: center;
   justify-content: space-evenly;
 }
-/* .menu {
-  display: flex;
-  align-items: center;
-  width: 40%;
-  justify-content: space-evenly;
-} */
 .navlink {
   color: white;
   text-decoration: none;
-}
-/* .navbar {
-  display: flex;
-  align-items: center;
-  width: 200px;
-  direction: rtl;
-  justify-content: center;
+  margin: 0 20px;
 }
 .home {
   order: 1;
@@ -32,19 +20,6 @@
   cursor: pointer;
   background: white;
 }
-.home:active {
-  background: #cccccc;
-} */
-/* .home:hover {
-  background-color: rgb(228, 224, 224);
-  border-radius: 50%;
-  user-select: none;
-} */
-/* .shopping-cart:hover {
-  background-color: rgb(228, 224, 224);
-  border-radius: 50%;
-  user-select: none;
-} */
 .shopping-cart {
   padding: 8px;
   cursor: pointer;
@@ -58,8 +33,6 @@
   padding: 10px;
   color: white;
   background: #1b1a20;
-  /* color: #333333;
-  background: #fcfafa; */
   border: none;
   outline: none;
   border-radius: 50%;
@@ -69,11 +42,6 @@
   cursor: pointer;
   user-select: none;
 }
-
-/* .iconButton:active {
-  background: #cccccc;
-} */
-
 .iconButtonBadge {
   position: absolute;
   top: 0;
