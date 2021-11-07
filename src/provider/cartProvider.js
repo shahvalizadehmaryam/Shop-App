@@ -1,6 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 const cartData = {
   cart: [],
+  orders: [],
   totalAmount: 0,
 };
 const CartContext = createContext();
@@ -23,12 +24,14 @@ const Reducer = (state, action) => {
         console.log("you added before");
         existedProduct.quantity = existedProduct.quantity + 1;
         return {
+          ...state,
           cart: state.cart,
           totalAmount: updatedTotalAmount,
         };
       } else {
         const updatedItems = state.cart.concat(productItem);
         return {
+          ...state,
           cart: updatedItems,
           totalAmount: updatedTotalAmount,
         };
@@ -39,6 +42,7 @@ const Reducer = (state, action) => {
       const updatedTotalAmount = state.totalAmount + existedProduct.price * 1;
       existedProduct.quantity++;
       return {
+        ...state,
         cart: state.cart,
         totalAmount: updatedTotalAmount,
       };
@@ -49,16 +53,30 @@ const Reducer = (state, action) => {
       if (existedProduct.quantity === 1) {
         const filteredProducts = state.cart.filter((p) => p.id !== action.id);
         return {
+          ...state,
           cart: filteredProducts,
           totalAmount: updatedTotalAmount,
         };
       } else {
         existedProduct.quantity--;
         return {
+          ...state,
           cart: state.cart,
           totalAmount: updatedTotalAmount,
         };
       }
+    }
+    case "ORDER": {
+      state.cart.forEach((e, index) => {
+        e.warhouse = e.warhouse - e.quantity;
+        const orderList = [...state.orders];
+        orderList[index] = e;
+        // const test = state.orders.push(e);
+        return {
+          ...state,
+          orders: orderList,
+        };
+      });
     }
     default: {
       return cartData;
