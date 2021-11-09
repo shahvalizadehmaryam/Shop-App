@@ -7,6 +7,7 @@ import updateProductService from "../../../services/updateProductService";
 import { useState } from "react";
 import { useOrder, useOrderAction } from "../../../provider/orderProvider";
 import { useUser } from "../../../provider/userProvider";
+import axios from "axios";
 
 const Cart = (props) => {
   const { addToast } = useToasts();
@@ -23,9 +24,16 @@ const Cart = (props) => {
     // } else {
     orderDispatcher({
       type: "ORDER_Products",
-      payload: { cart: cartData.cart, userId: userData.id },
+      payload: { cart: cartData.cart, uId: userData.id },
     });
-    console.log("orderData", orderData);
+    axios.post("http://localhost:3001/orders", orderData).then((res) => {
+      console.log(res);
+    });
+    props.history.push("/");
+    addToast("Your order has been successfully registered", {
+      appearance: "success",
+      autoDismiss: true,
+    });
     // }
     //  cartData.cart.forEach((e) => {
     //   e.warhouse = e.warhouse - e.quantity;
